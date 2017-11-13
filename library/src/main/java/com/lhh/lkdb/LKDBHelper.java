@@ -22,6 +22,8 @@ public class LKDBHelper implements ILKDBHelper{
     private boolean s_NullToEmpty = false;
     private final static String TAG = "LKDBHelper";
 
+    private static String s_db = "lkdb_global.db";
+
     private String mEncryptionKey;//后续提供的加密功能
     private final ISQLiteOpenHelper mISQLiteOpenHelper;
 
@@ -34,6 +36,23 @@ public class LKDBHelper implements ILKDBHelper{
             Log.e(TAG ,"context is exists!!! don't init more than twice");
         }
         mContext = context;
+    }
+
+    public static void initWithDBName(Context context, String s_db){
+        init(context);
+        setDBName(s_db);
+    }
+
+    public static ILKDBHelper getHelper(){
+        return getHelper(getDBName());
+    }
+
+    public static void setDBName(String dbName){
+        s_db = dbName;
+    }
+
+    public static String getDBName(){
+        return s_db;
     }
 
     public static ILKDBHelper getHelper(String dbname){

@@ -5,6 +5,7 @@ import com.lhh.lkdb.annotations.PrimaryKey;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Linhh on 2017/11/10.
@@ -28,6 +29,51 @@ public class TestModel implements ILKDBModel{
     @Override
     public void setDb_inserting(boolean status) {
 
+    }
+
+    @Override
+    public boolean insertToDB() {
+        return false;
+    }
+
+    @Override
+    public boolean updateToDB(Object where) {
+        return false;
+    }
+
+    @Override
+    public boolean updateToDBWithTableName(String sets, Object where) {
+        return false;
+    }
+
+    @Override
+    public boolean isExistsModel() {
+        return false;
+    }
+
+    @Override
+    public long rowCountWithWhere(String where) {
+        return 0;
+    }
+
+    @Override
+    public long rowCountWithWhere(Map<String, Object> where) {
+        return 0;
+    }
+
+    @Override
+    public boolean insertWhenNotExists() {
+        return false;
+    }
+
+    @Override
+    public boolean deleteToDB() {
+        return false;
+    }
+
+    @Override
+    public String getDBName() {
+        return null;
     }
 
     @Override

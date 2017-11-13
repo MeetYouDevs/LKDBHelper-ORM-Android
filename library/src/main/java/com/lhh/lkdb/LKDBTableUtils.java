@@ -31,6 +31,14 @@ public class LKDBTableUtils {
 
     public static final String LKSQL_Type_Text = "TEXT";
     public static final String LKSQL_Type_Integer = "INTEGER";
+    public static <T extends ILKDBModel> String getTable(T model){
+        String table = model.getTableName();
+        if(TextUtils.isEmpty(table)){
+            return getTableByClass(model.getClass());
+        }else{
+            return table;
+        }
+    }
     public static String getTableByClass(Class<? extends ILKDBModel> clazz){
         String tableName = null;
         synchronized (LKDBTableUtils.class) {
