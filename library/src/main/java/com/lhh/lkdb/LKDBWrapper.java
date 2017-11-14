@@ -675,11 +675,6 @@ public abstract class LKDBWrapper implements ILKDBHelper{
         return isCreated;
     }
 
-    @Override
-    public long rowCountWithTableName(String tableName, String where) {
-        return row(tableName,where);
-    }
-
     private long row(String tableName, Object where){
         try {
             LKDBCheck_tableNameIsInvalid(tableName);
@@ -701,17 +696,12 @@ public abstract class LKDBWrapper implements ILKDBHelper{
 
 
     @Override
-    public long rowCount(Class<? extends ILKDBModel> clazz, String where) {
+    public long rowCount(Class<? extends ILKDBModel> clazz, Object where) {
         return rowCountWithTableName(LKDBTableUtils.getTableByClass(clazz), where);
     }
 
     @Override
-    public long rowCount(Class<? extends ILKDBModel> clazz, Map<String, Object> where) {
-        return rowCountWithTableName(LKDBTableUtils.getTableByClass(clazz), where);
-    }
-
-    @Override
-    public long rowCountWithTableName(String tableName, Map<String, Object> where) {
+    public long rowCountWithTableName(String tableName, Object where) {
         return row(tableName, where);
     }
 

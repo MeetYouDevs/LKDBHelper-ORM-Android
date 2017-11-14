@@ -1,6 +1,7 @@
 package demo.lhh.com.lkdbhelper;
 
 import com.lhh.lkdb.ILKDBModel;
+import com.lhh.lkdb.LKDBModelManager;
 import com.lhh.lkdb.annotations.PrimaryKey;
 
 import java.util.ArrayList;
@@ -52,12 +53,7 @@ public class TestModel implements ILKDBModel{
     }
 
     @Override
-    public long rowCountWithWhere(String where) {
-        return 0;
-    }
-
-    @Override
-    public long rowCountWithWhere(Map<String, Object> where) {
+    public long rowCountWithWhere(Object where) {
         return 0;
     }
 

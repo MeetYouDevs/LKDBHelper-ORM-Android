@@ -20,9 +20,7 @@ public interface ILKDBModel {
 
     public boolean isExistsModel();
 
-    public long rowCountWithWhere(String where);
-
-    public long rowCountWithWhere(Map<String,Object> where);
+    public long rowCountWithWhere(Object where);
 
     public boolean insertWhenNotExists();
 

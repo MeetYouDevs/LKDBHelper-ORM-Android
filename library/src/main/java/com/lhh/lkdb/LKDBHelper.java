@@ -321,7 +321,7 @@ public class LKDBHelper implements ILKDBHelper{
     }
 
     @Override
-    public long rowCount(Class<? extends ILKDBModel> clazz, String where) {
+    public long rowCount(Class<? extends ILKDBModel> clazz, Object where) {
         try{
             return mISQLiteOpenHelper.getDBWrapper().rowCount(clazz, where);
 
@@ -332,29 +332,7 @@ public class LKDBHelper implements ILKDBHelper{
     }
 
     @Override
-    public long rowCount(Class<? extends ILKDBModel> clazz, Map<String, Object> where) {
-        try{
-            return mISQLiteOpenHelper.getDBWrapper().rowCount(clazz, where);
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return -1;
-    }
-
-    @Override
-    public long rowCountWithTableName(String tableName, String where) {
-        try{
-            return mISQLiteOpenHelper.getDBWrapper().rowCountWithTableName(tableName, where);
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return -1;
-    }
-
-    @Override
-    public long rowCountWithTableName(String tableName, Map<String, Object> where) {
+    public long rowCountWithTableName(String tableName, Object where) {
         try{
             return mISQLiteOpenHelper.getDBWrapper().rowCountWithTableName(tableName, where);
 

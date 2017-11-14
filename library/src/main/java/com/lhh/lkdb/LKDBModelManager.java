@@ -67,17 +67,7 @@ public class LKDBModelManager {
         }
     }
 
-    public  static <T extends ILKDBModel> long rowCountWithWhere(T model, String where){
-        String db = model.getDBName();
-        String tableName = LKDBTableUtils.getTable(model);
-        if(TextUtils.isEmpty(db)){
-            return LKDBHelper.getHelper().rowCountWithTableName(tableName,  where);
-        }else{
-            return LKDBHelper.getHelper(db).rowCountWithTableName(tableName,  where);
-        }
-    }
-
-    public  static <T extends ILKDBModel> long rowCountWithWhere(T model, Map<String,Object> where){
+    public  static <T extends ILKDBModel> long rowCountWithWhere(T model, Object where){
         String db = model.getDBName();
         String tableName = LKDBTableUtils.getTable(model);
         if(TextUtils.isEmpty(db)){

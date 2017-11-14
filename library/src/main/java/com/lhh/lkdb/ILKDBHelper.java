@@ -70,13 +70,9 @@ public interface ILKDBHelper {
 
     public <T extends ILKDBModel> long rowCount(T model);
 
-    public long rowCount(Class<? extends ILKDBModel> clazz, String where);
+    public long rowCount(Class<? extends ILKDBModel> clazz, Object where);
 
-    public long rowCount(Class<? extends ILKDBModel> clazz, Map<String, Object> where);
-
-    public long rowCountWithTableName(String tableName, String where);
-
-    public long rowCountWithTableName(String tableName, Map<String, Object> where);
+    public long rowCountWithTableName(String tableName, Object where);
 
     public <T extends ILKDBModel> List<T> search(Class<T> modelClass, String sql, List<Object> objects);
 
