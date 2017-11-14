@@ -114,6 +114,8 @@ public class TestModel  implements ILKDBModel{
 }
 ```
 
+编译工程后，LKDB-Android会自动往方法中织入对应实现代码，无需使用者关心。
+
 ## Step 2.
 
 `可直接通过Model操作Model以及数据库。`
