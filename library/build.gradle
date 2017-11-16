@@ -29,3 +29,5 @@ dependencies {
     provided 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.alibaba:fastjson:1.1.55.android'
 }
+
+apply from: 'p.gradle'
